@@ -1,14 +1,6 @@
 require "ans-releaser"
-
-class Ans::Mysql::Task::Task
+class GemReleaseTask
   include Ans::Releaser::GemTask
-
-  module ClassMethods
-    def install_tasks
-      new.build_release_tasks
-    end
-  end
-  extend ClassMethods
 
   def gem_host
     "gem.ans-web.co.jp"
@@ -18,4 +10,4 @@ class Ans::Mysql::Task::Task
   end
 end
 
-Ans::Mysql::Task::Task.install_tasks
+GemReleaseTask.new.build_release_tasks
