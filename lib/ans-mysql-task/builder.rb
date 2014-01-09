@@ -19,8 +19,9 @@ module Ans::Mysql::Task::Builder
 
   def user
     require "yaml"
+    require "erb"
 
-    yml = YAML.load_file "config/database.yml"
+    yml = YAML.load ERB.new(IO.read("config/database.yml")).result
 
     prefix = database_prefix
     is_delete = ENV["DELETE"]
