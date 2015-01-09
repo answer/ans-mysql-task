@@ -3,18 +3,24 @@ ans-mysql-task
 
 mysql タスクを提供する
 
+install
+-------
 
-	class MysqlTask
-	  include Ans::Mysql::Task::Builder
-	
-	  def database_prefix
-	    "myapp"
-	  end
-	end
-	
-	namespace :mysql do
-	  MysqlTask.new.build_mysql_tasks
-	end
+lib/tasks/mysql.rake 等に以下のファイルを設置する
+
+```ruby
+class MysqlTask
+  include Ans::Mysql::Task::Builder
+
+  def database_prefix
+    "myapp"
+  end
+end
+
+namespace :mysql do
+  MysqlTask.new.build_mysql_tasks
+end
+```
 
 
 タスク
