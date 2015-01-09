@@ -3,8 +3,22 @@ ans-mysql-task
 
 mysql タスクを提供する
 
-install
--------
+## Installation
+
+Add this line to your application's Gemfile:
+
+    gem 'ans-mysql-task'
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install ans-mysql-task
+
+usage
+-----
 
 lib/tasks/mysql.rake 等に以下のファイルを設置する
 
